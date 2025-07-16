@@ -25,7 +25,7 @@ This repository provides a fully automated Yocto (kirkstone branch) build system
 2. Run the build process:
 
    ```bash
-   .scripts/generate_yocto_images.sh
+   .scripts/yocto_build.sh
    ```
 
 This script will:
@@ -34,14 +34,6 @@ This script will:
 - Clone the Yocto `poky` repository
 - Start a container and run the Yocto build
 
-
-## Cleanup
-
-To remove the built image and any containers:
-
-   ```bash
-   .scrips/remove_docker_image.sh
-   ```
 
 ## License
 
