@@ -2,14 +2,16 @@
 
 set -e
 
-# Resolve script path and load config
+# Resolve script path
 SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
-source "$SCRIPT_DIR/config.cfg"
+CONFIG_FILE="$SCRIPT_DIR/config.cfg"
 
-if [ ! -f "./config.cfg" ]; then
-    echo "❌ config.cfg not found in current directory. Please run from the project root."
+# Check and load config
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "❌ config.cfg not found at: $CONFIG_FILE"
     exit 1
 fi
+source "$CONFIG_FILE"
 
 DEPLOY_DIR="$1"
 
